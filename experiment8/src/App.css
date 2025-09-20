@@ -1,1 +1,58 @@
+.app-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
 
+.library {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.library h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.library input {
+  margin: 5px;
+  padding: 8px;
+}
+
+.book-form {
+  margin: 15px 0;
+}
+
+.book-form input {
+  width: 150px;
+}
+
+.book-form button {
+  margin-left: 5px;
+  padding: 8px 12px;
+}
+
+.book-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.book-list li {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.book-list button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
