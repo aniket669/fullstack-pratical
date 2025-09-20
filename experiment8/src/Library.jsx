@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 function Library() {
   const [books, setBooks] = useState([
@@ -9,7 +9,7 @@ function Library() {
 
   // Add book
   const handleAddBook = () => {
-    if (newBook.title && newBook.author) {
+    if (newBook.title.trim() && newBook.author.trim()) {
       setBooks([...books, newBook]);
       setNewBook({ title: "", author: "" });
     }
@@ -22,9 +22,11 @@ function Library() {
     setBooks(updated);
   };
 
-  // Search filter
-  const filteredBooks = books.filter((book) =>
-    book.title.toLowerCase().includes(searchTerm.toLowerCase())
+  // Search filter (title or author)
+  const filteredBooks = books.filter(
+    (book) =>
+      book.title.toLowerCase().includes(searchTerm.toLowerCase().trim()) ||
+      book.author.toLowerCase().includes(searchTerm.toLowerCase().trim())
   );
 
   return (
@@ -34,7 +36,7 @@ function Library() {
       {/* Search */}
       <input
         type="text"
-        placeholder="Search by title..."
+        placeholder="Search by title or author"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
